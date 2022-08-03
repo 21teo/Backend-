@@ -1,0 +1,17 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: Apigateway
+    
+  cloud:
+    gateway:
+      routes:
+      - id: TOURISTSERVICE
+        uri:
+          lb://TOURIST
+        predicates:
+        - Path= /tourist/**
+        
+      
